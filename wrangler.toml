@@ -1,0 +1,7 @@
+name = "ai-video-generator1"
+main = "src/worker.js"
+compatibility_date = "2026-11-09"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"

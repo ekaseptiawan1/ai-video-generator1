@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14">
+  <title>FrameForge — AI Video Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">✳</span><span>frame<span class="muted">forge</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav active" href="#"><span>✧</span> Create video</a>
+      <a class="nav" href="#history"><span>▤</span> My generations</a>
+      <div class="side-bottom"><div class="status-dot"></div><span>AI engine ready</span><span class="version">BETA</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div class="crumb">Workspace <span>/</span> <b>Create video</b></div><a class="docs-link" href="https://developers.cloudflare.com/ai/models/xai/grok-imagine-video/" target="_blank" rel="noreferrer">API documentation ↗</a></header>
+      <section class="intro">
+        <div class="eyebrow"><span class="spark">✦</span> YOUR CREATIVE AI STUDIO</div>
+        <h1>Turn your ideas into<br><span class="gradient">moving stories.</span></h1>
+        <p>Describe the scene. Let AI bring it to life.</p>
+      </section>
+
+      <section class="workspace">
+        <div class="panel creator">
+          <div class="panel-head"><div><div class="step">01 <span>· PROMPT</span></div><h2>Describe your video</h2></div><span class="model-pill"><i></i> Grok Imagine Video</span></div>
+          <label for="prompt">YOUR PROMPT</label>
+          <textarea id="prompt" maxlength="2000" placeholder="A cinematic drone shot flying over a tropical island at golden hour, turquoise water, lush green cliffs, soft volumetric sunlight, realistic film look..."></textarea>
+          <div class="textarea-foot"><span>Be descriptive for better results</span><span id="counter">0 / 2000</span></div>
+          <div class="divider"></div>
+          <div class="step">02 <span>· SETTINGS</span></div>
+          <div class="settings-grid">
+            <div class="field"><label for="ratio">ASPECT RATIO</label><select id="ratio"><option value="16:9">▰ 16:9 · Landscape</option><option value="9:16">▯ 9:16 · Portrait</option><option value="1:1">□ 1:1 · Square</option><option value="4:3">▰ 4:3 · Classic</option><option value="3:4">▯ 3:4 · Portrait</option><option value="3:2">▰ 3:2 · Photo</option><option value="2:3">▯ 2:3 · Vertical</option></select></div>
+            <div class="field"><label for="duration">DURATION</label><select id="duration"><option value="5">5 seconds</option><option value="8">8 seconds</option><option value="10">10 seconds</option><option value="15">15 seconds</option></select></div>
+            <div class="field"><label for="resolution">RESOLUTION</label><select id="resolution"><option value="720p">720p · HD</option><option value="480p">480p · Standard</option></select></div>
+          </div>
+          <button id="generate" class="generate"><span>✦</span> Generate video <span class="arrow">→</span></button>
+          <p class="secure-note"><span>▣</span> API credentials are stored server-side, never in your browser.</p>
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="panel preview-panel">
+          <div class="panel-head"><div><div class="step">03 <span>· PREVIEW</span></div><h2>Your creation</h2></div><span class="preview-state" id="previewState">WAITING</span></div>
+          <div class="preview" id="preview">
+            <div class="preview-orb orb-one"></div><div class="preview-orb orb-two"></div>
+            <div class="preview-center"><div class="play-icon">▶</div><b>Your video will appear here</b><span>Enter a prompt to start creating</span></div>
+            <div class="preview-corner">FRAMEFORGE / AI STUDIO</div>
+          </div>
+          <div id="resultActions" class="result-actions hidden"><a id="download" class="download" href="#" target="_blank" rel="noreferrer">↓ Download video</a><button id="copyLink" class="copy">Copy link</button></div>
+          <div class="tip"><span>✧</span><div><b>Prompt tip</b><p>Include the subject, movement, environment, lighting, and camera angle for more cinematic results.</p></div></div>
+        </div>
+      </section>
+
+      <section class="history-section" id="history"><div class="history-head"><div><div class="step">LIBRARY</div><h2>Recent generations</h2></div><button id="clearHistory" class="clear">Clear history</button></div><div id="historyList" class="history-list"><div class="empty-history">Your generated videos will be saved in this browser.</div></div></section>
+      <footer>FRAMEFORGE <span>·</span> POWERED BY CLOUDFLARE AI</footer>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
